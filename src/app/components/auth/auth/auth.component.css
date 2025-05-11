@@ -1,0 +1,72 @@
+.auth-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-slider {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform: translateX(0%);
+}
+
+.auth-wrapper.register-mode .auth-slider {
+  transform: translateX(-50%);
+}
+
+.auth-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-panel .image,
+.auth-panel .form {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.auth-panel .form {
+  align-items: stretch;  /* estica o <app-login> */
+  justify-content: center;
+  height: 100%;
+}
+
+.auth-panel .image {
+  flex: 1;
+  height: 100%;
+  padding: 0;
+}
+
+.auth-panel .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou 'contain', dependendo do que você quer */
+  display: block;
+}
+.image {
+  background-color: #ddd;
+}
+.form {
+  background-color: #fff1;
+}
+
+.form app-login,
+.form app-register {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,0 +1,24 @@
+<div class="auth-wrapper" [class.register-mode]="isRegister">
+    <div class="auth-slider">
+      <!-- Bloco da esquerda: imagem + login -->
+      <div class="auth-panel login-panel">
+        <div class="image">
+          <img src="assets/img_livrolandia.png" alt="Imagem" />
+        </div>
+        <div class="form">
+          <app-login (toggle)="toggleMode()" *ngIf="!isRegister"></app-login>
+        </div>
+      </div>
+  
+      <!-- Bloco da direita: cadastro + imagem -->
+      <div class="auth-panel register-panel">
+        <div class="form">
+          <app-register (toggle)="toggleMode()" *ngIf="isRegister"></app-register>
+        </div>
+        <div class="image">
+          <img src="assets/img_livrolandia.png" alt="Imagem" />
+        </div>
+      </div>
+    </div>
+  </div>
+  

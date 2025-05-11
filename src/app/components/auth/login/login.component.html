@@ -1,0 +1,19 @@
+<div class="container">
+<h2>Login</h2>
+<form (ngSubmit)="logarUser()">
+  <label for="email">Email*</label>
+  <input type="email" [(ngModel)]="email" name="email"/>
+
+   <div class="label-row">
+    <label for="password">Senha*</label>
+    <a href="#" class="forgot-link">Esqueceu sua senha?</a>
+  </div>
+  <input type="password" [(ngModel)]="senha" name="senha"/>
+  <button type="submit">Login</button>
+</form>
+<!--<div class="login_google">
+<img style="width: 24px; height: 24px;" src="assets/ic_google.png" alt="icone google"/>
+<p>Login com o Google</p>
+</div>-->
+<p>Não tem conta? <a href="#" (click)="onSwitchToRegister()">Cadastre-se</a></p>
+</div>
