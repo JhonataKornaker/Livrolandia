@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+} 
+
+.container-btn {
+    display: flex;
+    gap: 16px;
+    margin-right: 24px;
+}
+
+.btn-login,
+.btn-cadastro {
+    width: 80px;
+    height: 40px;
+}
+
+.btn-login {
+    background-color: #fff;
+    color: #000;
+}
