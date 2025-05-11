@@ -9,10 +9,4 @@ import { Route, Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(private authService: AuthService, private router: Router){}
-
-  onDeslogarUser() {
-    this.authService.deslogar();
-    this.router.navigate([''])
-  }
 }

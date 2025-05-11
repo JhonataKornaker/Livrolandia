@@ -1,0 +1,66 @@
+.container {
+    margin: 0 62px;
+}
+.section-um {
+    display: flex;
+}
+.section-um-dois img {
+    height: 900px;
+    width: 656px;
+}
+.section-um-um {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+.section-um-titulo {
+    font-size: 56px;
+    font-weight: 700;
+    color: black;
+}
+.section-um-texto {
+    font-size: 18px;
+    font-weight: 400;
+    width: 556px;
+    padding-right: 48px;
+    line-height: 1.5;
+}
+.section-um-btn {
+    display: flex;
+    width: 305px;
+    gap: 16px;
+}
+.section-dois {
+    display: flex;
+    gap: 60px;
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+}
+.section-dois-img img {
+    width: 616px;
+    height: 616px;
+}
+.section-dois-dois {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 580px;
+}
+.section-dois-dois-info {
+    display: flex;
+    gap: 24px;
+}
+.section-dois-dois-info-um,
+.section-dois-dois-info-dois {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.title {
+    font-size: 20px;
+    font-weight: 700;
+}
