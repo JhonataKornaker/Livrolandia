@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    /* ESSENCIAL para eliminar scroll horizontal */
+    font-family: sans-serif;
+  }
+
+  input {
+    width: 480px;
+    height: 48px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+  }
+
+  button {
+    width: 480px;
+    height: 48px;
+    background-color: #000;
+    border-radius: 6px;
+    color: #fff;
+  }
+  
+  a {
+  color: inherit;            /* herda a cor do texto pai */
+}
+
+  
