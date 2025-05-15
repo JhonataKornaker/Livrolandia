@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -9,32 +13,19 @@
   
   html, body {
     height: 100%;
-    /* ESSENCIAL para eliminar scroll horizontal */
     font-family: sans-serif;
   }
 
-  input {
-    width: 480px;
-    height: 48px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-bottom: 24px;
-  }
+input {
+  @apply w-[480px] h-12 p-2.5 text-base rounded-md border border-gray-300 mb-6;
+}
 
-  button {
-    width: 480px;
-    height: 48px;
-    background-color: #000;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-  }
+button {
+  @apply w-[480px] h-12 bg-black rounded-md text-white cursor-pointer;
+}
   
-  a {
-  color: inherit;            /* herda a cor do texto pai */
+a {
+  @apply text-inherit underline;
 }
 
   
