@@ -1,3 +1,29 @@
-<div class="bg-blue-500 text-white p-4 rounded-lg">
-    <p>colecao-livro works!</p>
-</div>
+<section>
+    <div class="relative w-full h-[380px] overflow-hidden mb-28">
+        <img
+        src="assets/img_livrolandia.png"
+        alt="imagem"
+        class="min-w-full h-auto object-cover object-[center_-150px]" />
+        <div class=" flex flex-col absolute top-1/2 -translate-y-1/2 left-16 text-white font-bold w-[760px]">
+            <p
+        class="text-white font-bold">
+        Biblioteca</p>
+            <p class="text-white text-[48px]">Explore nossa coleção</p>
+            <p class="text-white font-bold">
+                Acompanhe nossos artigos e fique por dentro de temas essenciais, dicas de leitura, 
+                gêneros literários e curiosidades sobre o mundo dos livros.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap p-6 gap-x-8 gap-y-16">
+        <app-card
+            *ngFor="let livro of livros"
+            [title]="livro.title"
+            [description]="livro.description"
+            [ano]="livro.ano"
+            [image]="livro.image">
+        </app-card>
+    </div>
+    
+</section>
