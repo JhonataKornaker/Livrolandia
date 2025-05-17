@@ -1,0 +1,26 @@
+<section class="bg-white shadow-md rounded-xl overflow-hidden max-w-[304px]">
+    <img 
+        *ngIf="image"
+        [src]="image"
+        alt="Card Image"
+        class="w-full h-[365px] object-center rounded-md"
+    />
+    <div class="flex flex-col justify-center items-center mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">{{title}}</h2>
+        <p class="text-gray-600">{{description}}</p>
+        <p class="text-sm font-bold">{{ano}}</p>
+
+    <div class="flex mt-4 gap-4 items-start">
+        <button
+        class="bg-white text-black rounded hover:bg-gray-300 transition w-36 border"
+            (click)="onAction()">
+            {{buttonTextSinopse}}
+        </button>
+        <button
+        class="bg-white text-black rounded hover:bg-gray-300 transition w-36 border">
+            {{buttonTextEmprestar}}
+        </button>
+        </div>
+    </div>
+    
+</section>
