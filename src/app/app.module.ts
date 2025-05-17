@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from './app.routes';
 import { AuthService } from './service/auth.service';
 import { HomeComponent } from './components/home/home.component';
+import { ColecaoLivroComponent } from './components/colecao-livro/colecao-livro.component';
+import { CardComponent } from './components/card/card.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,  
     HeaderComponent, 
-    HomeComponent
+    HomeComponent, 
+    ColecaoLivroComponent, CardComponent, ModalComponent
   ],
   imports: [
     BrowserModule,
