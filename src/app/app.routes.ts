@@ -6,11 +6,12 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HomeComponent } from './components/home/home.component';
 import { ColecaoLivroComponent } from './components/colecao-livro/colecao-livro.component';
 import { CardComponent } from './components/card/card.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {path: '', component: AuthComponent},
-    {path: 'home', component: HomeComponent},
-    {path: 'acervo', component: ColecaoLivroComponent}
+    {path: 'home', component: HomeComponent, canActivate: [authGuard]},
+    {path: 'acervo', component: ColecaoLivroComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({
