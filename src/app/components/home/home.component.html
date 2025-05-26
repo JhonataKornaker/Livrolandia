@@ -1,60 +1,89 @@
-<section class="container">
-    <section class="section-um">
-    <div class="section-um-um">
-        <p class="section-um-titulo">
-            Bem-vindo à Livrolandia - Sua Biblioteca Digital
-        </p>
-        <p class="section-um-texto">
-            Descubra um ambiente virtual feito para leitores como você. 
-            Com um acervo diversificado, sistema inteligente de empréstimo e 
-            devolução e recomendações personalizadas, a Livrolândia coloca a 
-            leitura na ponta dos seus dedos — onde e quando quiser.
-        </p>
-        <div class="section-um-btn">
-            <button (click)="navegarToAcervo()">Explorar Acervo</button>
-            <button style="background-color: #fff; color: #000;">
-                Criar Conta
-            </button>
-        </div>
+<section class="mx-[62px]">
+  <section class="flex">
+    <div class="flex flex-col justify-center gap-6">
+      <p class="text-[56px] font-bold text-black">
+        Bem-vindo à Livrolandia - Sua Biblioteca Digital
+      </p>
+      <p class="text-[18px] font-normal w-[556px] pr-12 leading-[1.5]">
+        Descubra um ambiente virtual feito para leitores como você. 
+        Com um acervo diversificado, sistema inteligente de empréstimo e 
+        devolução e recomendações personalizadas, a Livrolândia coloca a 
+        leitura na ponta dos seus dedos — onde e quando quiser.
+      </p>
+      <div class="flex w-[305px] gap-4">
+        <button (click)="navegarToAcervo()">Explorar Acervo</button>
+        <button class="bg-white text-black">Criar Conta</button>
+      </div>
     </div>
-    <div class="section-um-dois">
-        <img src="assets/img_content.png" alt="img content"/>
+    <div>
+      <img src="assets/img_content.png" alt="img content" class="h-[900px] w-[656px]" />
     </div>
-    </section>
-    <section class="section-dois">
-        <div class="section-dois-img">
-            <img src="assets/img_content_dois.png" alt="img_content_dois" />
-        </div>
-        <div class="section-dois-dois">
-            <p class="section-um-titulo">
-                Desbloquei um Universo com a nossa Biblioteca Digital
-            </p>
-            <p class="section-um-texto">
-                Mergulhe em um mundo de conhecimento e imaginação com
-                 nosso sistema online. Aqui, você encontra centenas de 
-                 livros organizados por categorias, com sinopses completas, 
-                 sugestões inteligentes e um processo de empréstimo e 
-                 devolução simples e rápido — tudo ao alcance de um clique.
-            </p>
-            <div class="section-dois-dois-info">
-                <div class="section-dois-dois-info-um">
-                    <img src="assets/Subheading_one.png" alt="img" />
-                <p>
-                    Explore milhares de títulos em diferentes gêneros: 
-                    literatura, ciência, história, fantasia, autoajuda, 
-                    livros acadêmicos e muito mais — tudo reunido em um só lugar.
-                </p>
-                </div>
-                <div class="section-dois-dois-info-dois">
-                    <img src="assets/Subheading_two.png" alt="img" />
-                <p>
-                    Solicite livros com facilidade e devolva dentro do prazo
-                    com total praticidade. Receba alertas e acompanhe seu
-                    histórico de forma automatizada.
-                </p>
-                </div>
-            </div>
-        </div>
-    </section>
-</section>
+  </section>
 
+  <section class="flex gap-[60px] h-[840px] justify-center items-center">
+    <div>
+      <img src="assets/img_content_dois.png" alt="img_content_dois" class="w-[616px] h-[616px]" />
+    </div>
+    <div class="flex flex-col justify-center items-center gap-6 w-[580px]">
+      <p class="text-[56px] font-bold text-black text-center">
+        Desbloqueie um Universo com a nossa Biblioteca Digital
+      </p>
+      <p class="text-[18px] font-normal pr-12 w-[556px] leading-[1.5] text-center">
+        Mergulhe em um mundo de conhecimento e imaginação com nosso sistema online.
+        Aqui, você encontra centenas de livros organizados por categorias, com sinopses completas,
+        sugestões inteligentes e um processo de empréstimo e devolução simples e rápido — tudo ao alcance de um clique.
+      </p>
+      <div class="flex gap-6">
+        <div class="flex flex-col gap-4 max-w-[280px]">
+          <img src="assets/Subheading_one.png" alt="img" />
+          <p>
+            Explore milhares de títulos em diferentes gêneros: literatura, ciência, história, fantasia, autoajuda,
+            livros acadêmicos e muito mais — tudo reunido em um só lugar.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 max-w-[280px]">
+          <img src="assets/Subheading_two.png" alt="img" />
+          <p>
+            Solicite livros com facilidade e devolva dentro do prazo com total praticidade.
+            Receba alertas e acompanhe seu histórico de forma automatizada.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex justify-between gap-20">
+        <div class="flex flex-col w-[700px] gap-4">
+            <p class="font-black">Recursos</p>
+            <p class="font-bold text-[48px] leading-tight">Na Livrolândia, a leitura vai além do papel</p>
+        </div>
+        <p class="w-[616px]">
+            Nossa plataforma oferece um sistema inteligente de empréstimo e devolução digital, 
+            permitindo que você aproveite ao máximo sua experiência literária com acesso rápido, 
+            controle total dos seus prazos e um acervo com diversos gêneros e autores para todos os gostos.
+            Explore romances, biografias, suspense, livros acadêmicos e muito mais — tudo em um só lugar, 
+            com sugestões personalizadas para cada tipo de leitor.
+        </p>
+  </section>
+
+  <section class="flex justify-between gap-12 mt-[100px]">
+        <div class="flex flex-col gap-6 w-[405px]">
+            <img 
+            class="h-[240px] object-cover rounded-[22px]"
+            src="assets/img_home/img_end_03.png" alt="img end 03"/>
+            <p class="font-bold text-[32px]">Empréstimos e Devolução Inteligentes</p>
+            <p class="font-bold text-[20px]">Pegue e devolva livros em poucos cliques</p>
+            <p>Gerencie seu histórico de leitura e controle prazos de devolução facilmente com nosso sistema digital.</p>
+        </div>
+        <div>
+            <img 
+            class="w-[405px] h-[240px] object-cover rounded-[22px]"
+            src="assets/img_home/img_end_02.png" alt="img end 02"/>
+        </div>
+        <div>
+            <img 
+            class="w-[405px] h-[240px] object-cover rounded-[22px]"
+            src="assets/img_home/img_end_01.png" alt="img end 01"/>
+        </div>
+  </section>
+</section>
