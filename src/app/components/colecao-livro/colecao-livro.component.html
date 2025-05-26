@@ -1,9 +1,5 @@
 <section>
-    <div class="relative w-full h-[380px] overflow-hidden mb-28">
-        <img
-        src="assets/img_livrolandia.png"
-        alt="imagem"
-        class="min-w-full h-auto object-cover object-[center_-150px]" />
+    <div class="relative w-full h-[333px] bg-[url('assets/img_livrolandia.png')] bg-cover bg-center">
         <div class=" flex flex-col absolute top-1/2 -translate-y-1/2 left-16 text-white font-bold w-[760px]">
             <p
         class="text-white font-bold">
@@ -16,7 +12,7 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 mx-auto">
         <app-card
             *ngFor="let livro of livros"
             [title]="livro.title"
