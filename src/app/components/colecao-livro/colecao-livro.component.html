@@ -1,5 +1,5 @@
 <section>
-    <div class="relative w-full h-[333px] bg-[url('assets/img_livrolandia.png')] bg-cover bg-center">
+    <div class="relative w-full h-[333px] bg-[url('assets/img_home/img_rodape.jpg')] bg-cover bg-[center_top]">
         <div class=" flex flex-col absolute top-1/2 -translate-y-1/2 left-16 text-white font-bold w-[760px]">
             <p
         class="text-white font-bold">
@@ -12,24 +12,42 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 mx-auto mt-[100px]">
         <app-card
             *ngFor="let livro of livros"
             [title]="livro.title"
             [description]="livro.description"
             [ano]="livro.ano"
             [image]="livro.image"
-            (verSinopse)="openModal(livro)">
+            [buttonTextEmprestar]="livro.emprestado ? 'Devolver' : 'Emprestar'"
+            (verSinopse)="openModal(livro)"
+            (emprestarLivro)="openConfirmModal(livro)">
         </app-card>
     </div>
 
     
-    <app-modal [show]="isModalOpen" (close)="closeModal()">
+    <app-modal [show]="isModalOpen" (close)="closeModal()"
+        customClass="w-full max-w-md min-h-[600px] max-h-[90vh]">
         <h2 class="text-xl font-bold">{{ selectedLivro?.title }}</h2>
         <img *ngIf="selectedLivro?.image" [src]="selectedLivro.image" class="w-[280px] h-[360px] object-center rounded-xl" />
         <p class="mt-2">{{ selectedLivro?.description }}</p>
         <p class="text-sm text-gray-500">{{ selectedLivro?.ano }}</p>
         <p>{{selectedLivro?.sinopse}}</p>
+    </app-modal>
+
+    <!-- Modal de Confirmação -->
+    <app-modal [show]="isConfirmModalOpen" (close)="closeConfirmModal()"
+        customClass="max-w-md">
+        <h2 class="text-xl font-bold mb-4">Confirmar</h2>
+        <p class="text-gray-700 text-center">
+            Você deseja realmente 
+            <strong>{{ livroParaConfirmar?.emprestado ? 'devolver' : 'emprestar' }}</strong> 
+            o livro <strong>"{{ livroParaConfirmar?.title }}"</strong>?
+        </p>
+        <div class="flex gap-8 mt-6">
+            <button class="bg-white text-black w-auto font-bold border border-black px-4 py-2 rounded" (click)="closeConfirmModal()">Cancelar</button>
+            <button class="bg-white text-black w-auto font-bold border border-black px-4 py-2 rounded" (click)="confirmarEmprestimoOuDevolucao()">Confirmar</button>
+        </div>
     </app-modal>
     
 </section>
