@@ -17,7 +17,9 @@
             {{buttonTextSinopse}}
         </button>
         <button
-        class="bg-white text-black rounded hover:bg-gray-300 transition w-36 border">
+        [ngClass]="buttonTextEmprestar === 'Emprestar' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'"
+        class="rounded hover:bg-gray-300 transition w-36 border"
+            (click)="onEmprestar()">
             {{buttonTextEmprestar}}
         </button>
         </div>

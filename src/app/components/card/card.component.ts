@@ -15,8 +15,13 @@ export class CardComponent {
   @Input() buttonTextEmprestar: string = 'Emprestar';
 
   @Output() verSinopse = new EventEmitter<void>();
+  @Output() emprestarLivro = new EventEmitter<void>();
 
   onVerSinopse() {
     this.verSinopse.emit();
+  }
+
+  onEmprestar() {
+    this.emprestarLivro.emit();
   }
 }
