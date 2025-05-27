@@ -9,6 +9,7 @@ export class ModalComponent {
 
   @Input() show: boolean = false;
   @Output() close = new EventEmitter<void>();
+  @Input() customClass: string = '';
 
   onClose() {
     this.close.emit();
