@@ -23,20 +23,34 @@ export class RegisterComponent {
     this.toggle.emit();
   }
 
-  cadastrar() {
-    if (!this.email || !this.senha) {
-      this.mensagem = 'Preencha todos os campos.';
-      alert('Preencha todos os campos');
-      return;
-    }
-
-    const sucesso = this.authService.cadastrar({email: this.email, senha: this.senha, nome: this.nome})
-    this.mensagem = sucesso ? 'Cadastro realizado com sucesso!' : 'Email já cadastrado.'
-
-    if(sucesso) {
-      this.router.navigate(['/home'])
-    } else {
-      alert('Email ja foi cadastrado')
-    }
+cadastrar() {
+  if (!this.email || !this.senha || !this.nome) {
+    alert('Preencha todos os campos');
+    return;
   }
+
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
+  if (!emailValido) {
+    alert('Digite um e-mail válido');
+    return;
+  }
+
+  if (this.senha.length < 6) {
+    alert('A senha deve ter pelo menos 6 caracteres.');
+    return;
+  }
+
+  const sucesso = this.authService.cadastrar({
+    email: this.email,
+    senha: this.senha,
+    nome: this.nome
+  });
+
+  if (sucesso) {
+    this.router.navigate(['/home']);
+  } else {
+    alert('Email já foi cadastrado');
+  }
+}
+
 }

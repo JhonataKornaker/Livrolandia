@@ -1,34 +1,59 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-@Injectable({providedIn: 'root'})
+interface Usuario {
+  email: string;
+  senha: string;
+  nome: string;
+}
+
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-    private storageKey = 'usuarios';
+  private storageKey = 'usuarios';
+  private logadoKey = 'usuarioLogado';
 
-    cadastrar(usuario: {email: string, senha: string, nome: string}): boolean {
-        const usuarios = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-        if(usuarios.find((u: any) => u.email === usuario.email)) {
-            return false;
-        }
-        usuarios.push(usuario);
-        localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
-        return true;
+  private getUsuarios(): Usuario[] {
+    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+  }
+
+  private setUsuarios(usuarios: Usuario[]): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+  }
+
+  cadastrar(usuario: Usuario): boolean {
+    const usuarios = this.getUsuarios();
+
+    const existe = usuarios.some(u => u.email === usuario.email);
+    if (existe) {
+      return false;
     }
 
-    logar(email: string, senha: string): boolean {
-        const usuarios = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-        const usuario = usuarios.find((u: any) => u.email === email && u.senha === senha);
-        if(usuario) {
-            localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-            return true;
-        }
-        return false;
+    usuarios.push(usuario);
+    this.setUsuarios(usuarios);
+    this.setUsuarioLogado(usuario);
+    return true;
+  }
+
+  logar(email: string, senha: string): boolean {
+    const usuarios = this.getUsuarios();
+    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+
+    if (usuario) {
+      this.setUsuarioLogado(usuario);
+      return true;
     }
 
-    deslogar() {
-        localStorage.removeItem('usuarioLogado');
-    }
+    return false;
+  }
 
-    usuarioLogado() {
-        return JSON.parse(localStorage.getItem('usuarioLogado') || 'null');
-    }
+  deslogar(): void {
+    localStorage.removeItem(this.logadoKey);
+  }
+
+  usuarioLogado(): Usuario | null {
+    return JSON.parse(localStorage.getItem(this.logadoKey) || 'null');
+  }
+
+  private setUsuarioLogado(usuario: Usuario): void {
+    localStorage.setItem(this.logadoKey, JSON.stringify(usuario));
+  }
 }
