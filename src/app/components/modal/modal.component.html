@@ -1,16 +1,15 @@
 <section
-    *ngIf="show"
-    class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-    (click)="onOverlayClick($event)">
-
-    <div 
+  *ngIf="show"
+  class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+  (click)="onOverlayClick($event)"
+>
+  <div
     class="bg-white p-6 rounded-xl shadow-xl relative"
     [ngClass]="customClass"
-    (click)="$event.stopPropagation()">
-    
+    (click)="$event.stopPropagation()"
+  >
     <div class="flex flex-col justify-center items-center">
       <ng-content></ng-content>
     </div>
-
-    </div>
-</section>  
+  </div>
+</section>

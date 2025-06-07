@@ -1,20 +1,19 @@
 <div class="container">
-<h2>Cadastre-se</h2>
-<p class="text">Faça seu cadastro e aproveite de nossos acervos de livros</p>
-<form (ngSubmit)="cadastrar()">
-  <label for="text">Nome*</label>
-  <input type="text" [(ngModel)]="nome" name="nome"/>
+  <h2>Cadastre-se</h2>
+  <p class="text">Faça seu cadastro e aproveite de nossos acervos de livros</p>
+  <form (ngSubmit)="cadastrar()">
+    <label for="text">Nome*</label>
+    <input type="text" [(ngModel)]="nome" name="nome" />
 
-  <label for="email">Email*</label>
-  <input type="email" [(ngModel)]="email" name="email" />
+    <label for="email">Email*</label>
+    <input type="email" [(ngModel)]="email" name="email" />
 
-  <label for="password">Senha*</label>
-  <input type="password" [(ngModel)]="senha" name="senha" />
-  <button type="submit">Cadastrar</button>
-</form>
-<!--<div class="login_google">
-<img style="width: 24px; height: 24px;" src="assets/ic_google.png" alt="icone google"/>
-<p>Login com o Google</p>
-</div>-->
-<p>Já tem uma conta? <a href="#" (click)="onSwitchToLogin()">Faça Login</a></p>
+    <label for="password">Senha*</label>
+    <input type="password" [(ngModel)]="senha" name="senha" />
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <p>
+    Já tem uma conta? <a href="#" (click)="onSwitchToLogin()">Faça Login</a>
+  </p>
 </div>

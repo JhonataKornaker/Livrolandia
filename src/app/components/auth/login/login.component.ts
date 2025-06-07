@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
 import { Router } from '@angular/router';
@@ -6,34 +5,32 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
   email = '';
   senha = '';
 
-  constructor(private authService: AuthService, private router: Router){}
-
   @Output() toggle = new EventEmitter<void>();
+  @Output() showModal = new EventEmitter<string>(); // Emite a mensagem para o componente pai
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSwitchToRegister() {
     this.toggle.emit();
   }
 
   logarUser() {
-    console.log('Método logarUser chamado');
-
     if (!this.email || !this.senha) {
-      alert('Preencha todos os campos');
+      this.showModal.emit('Preencha todos os campos'); // Chama a função do modal do pai
       return;
     }
-    const sucesso = this.authService.logar(this.email, this.senha);
 
+    const sucesso = this.authService.logar(this.email, this.senha);
     if (sucesso) {
-    this.router.navigate(['/home']);
-  } else {
-    alert('Email ou senha inválidos.');
-  }
+      this.router.navigate(['/home']);
+    } else {
+      this.showModal.emit('Email ou senha inválidos.'); // Chama a função do modal do pai
+    }
   }
 }

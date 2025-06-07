@@ -1,16 +1,24 @@
 <div class="w-screen h-screen overflow-hidden relative">
   <div
     class="flex w-[200vw] h-full transition-transform duration-[1200ms] ease-in-out"
-    [ngClass]="{ '-translate-x-[100vw]': isRegister, 'translate-x-0': !isRegister }"
+    [ngClass]="{
+      '-translate-x-[100vw]': isRegister,
+      'translate-x-0': !isRegister
+    }"
   >
     <!-- Painel login -->
     <div class="w-screen flex">
       <div class="flex-1 h-full flex items-center justify-center bg-gray-300">
-        <img src="assets/img_livrolandia.png" alt="Imagem" class="w-full h-full object-cover block" />
+        <img
+          src="assets/img_livrolandia.png"
+          alt="Imagem"
+          class="w-full h-full object-cover block"
+        />
       </div>
       <div class="flex-1 h-full flex items-center justify-center bg-white/10">
         <app-login
           (toggle)="toggleMode()"
+          (showModal)="openModal($event)"
           *ngIf="!isRegister"
           class="flex flex-1 flex-col h-full justify-center items-center"
         ></app-login>
@@ -22,13 +30,31 @@
       <div class="flex-1 h-full flex items-center justify-center bg-white/10">
         <app-register
           (toggle)="toggleMode()"
+          (showModal)="openModal($event)"
           *ngIf="isRegister"
           class="flex flex-1 flex-col h-full justify-center items-center"
         ></app-register>
       </div>
       <div class="flex-1 h-full flex items-center justify-center bg-gray-300">
-        <img src="assets/img_livrolandia.png" alt="Imagem" class="w-full h-full object-cover block" />
+        <img
+          src="assets/img_livrolandia.png"
+          alt="Imagem"
+          class="w-full h-full object-cover block"
+        />
       </div>
     </div>
   </div>
+  <!-- Modal -->
+  <app-modal *ngIf="showModal" [show]="showModal" (close)="closeModal()">
+    <h2 class="text-xl font-bold mb-4 text-center">Aviso</h2>
+    <p class="text-gray-700 text-center">{{ modalMessage }}</p>
+    <div class="flex justify-center mt-6">
+      <button
+        class="bg-white text-black font-bold border-black px-5 py-2 rounded hover:bg-gray-100 transition"
+        (click)="closeModal()"
+      >
+        Ok
+      </button>
+    </div>
+  </app-modal>
 </div>
